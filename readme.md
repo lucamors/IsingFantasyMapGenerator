@@ -19,7 +19,7 @@ Finally, trees, mountain and rivers are generated using the heightmap.
 > Moreover, noise functions can be used which will help avoid the uniformity often associated with distance-from-coastline-based approaches as can be seen on the image generated so far by this code.
 
 
-A detailed description of the whole procedure can be found [here](https://pages.github.com/).
+A detailed description of the whole procedure can be found [here](http://lucamorselli.me/blog/fantasy_map_generation_via_ising_model/).
 
 ## Installation
 
