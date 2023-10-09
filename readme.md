@@ -14,7 +14,7 @@ An heightmap is generated starting from these sea/terrain patterns by using the 
 
 Finally, trees, mountain and rivers are generated using the heightmap.
 
-> **Disclaimer** 
+> [!NOTE]
 > The code can be upgraded by adding cities and road within them. 
 > Moreover, noise functions can be used which will help avoid the uniformity often associated with distance-from-coastline-based approaches as can be seen on the image generated so far by this code.
 
