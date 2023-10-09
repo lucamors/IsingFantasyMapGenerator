@@ -5,7 +5,7 @@
 
 Ising Fantasy Map Generator is a C++ code for the procedurally generation of fantasy world map. 
 
-![repository_cover](docs/example.bmp)
+![repository_cover](docs/example.webp)
 
 The algorithm generates sea/terrain patterns using a 2D spin lattice whose dynamics is regulated by the Ising Hamiltonian. 
 The lattice undergo an annealing procedure that takes the system below its critical temperature where macroscopic correlation are still present at large scale.
