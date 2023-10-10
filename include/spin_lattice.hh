@@ -33,10 +33,9 @@ class SpinLattice{
 
         // Hamiltonian parameters
         float J = 1; // spin-spin coupling constant
-        float T = 3; // system temperature 
+        float temperature = 3; // system temperature 
         
         float energy;
-        float temperature;
 
 };
 

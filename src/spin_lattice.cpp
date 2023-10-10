@@ -9,7 +9,6 @@ SpinLattice::SpinLattice(int N)
 {
     lattice_size = N;
     boarder_size = ((int)(0.05*N));
-    temperature = 3;
 
     // Create the lattice grid
     init_lattice();
