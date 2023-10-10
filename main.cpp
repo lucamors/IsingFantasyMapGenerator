@@ -21,7 +21,7 @@ int main() {
 
         // Annealing procedure
         std::cout << std::endl << "Starting annealing procedure for map #" << l << std::endl;
-        lattice.anneal(150000000);
+        lattice.anneal(190000000);
         
         // Remove noisy pixel by "freezing" the lattice
         std::cout << std::endl << "Freezing the lattice: " << std::endl;
