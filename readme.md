@@ -39,8 +39,13 @@ make
 
 ## Usage
 
+To initiate the program, the lattice dimension and the desired number of generated images must be provided as command-line arguments.
 ```bash
-./IsingFantasyMapGenerator --outputfile <filename> --num-generated-images <N>
+./IsingFantasyMapGenerator --lattice-size <L> --num-generated-images <N>
+```
+or:
+```bash
+./IsingFantasyMapGenerator -L <L> -N <N>
 ```
 
 output example:
@@ -74,5 +79,5 @@ Generating rivers . . .
 Generating mountains . . .
 Generating trees . . .
 Rendering the map . . .
-Map saved into /home/mors/Documents/IsingFantasyMapGenerator/build/maps/map1.bmp
+Map saved into /home/mors/Documents/IsingFantasyMapGenerator/build/map1.bmp
 ```
