@@ -49,7 +49,7 @@ or:
 ```
 
 > [!WARNING]
-> The image on the cover was generated using the number of iterations that you can find hardcoded in the main.cpp file. However, the number of iterations to get a pleasing result depends on the lattice size and must be tuned. Using too many iterations below critical temperature will yield a sea-only map.
+> The image on the cover was generated using the number of iterations that you can find hardcoded in the main.cpp file with a lattice size of dimension 500. However, the number of iterations to get a pleasing result depends on the lattice size and must be tuned. Using too many iterations below critical temperature will yield a sea-only map.
 
 
 output example:
