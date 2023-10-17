@@ -1,4 +1,4 @@
-![repository_cover](docs/logo.svg)
+![repository_cover](docs/logo.png)
 
 
 ## Introduction
