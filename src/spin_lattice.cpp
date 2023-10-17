@@ -141,7 +141,7 @@ void SpinLattice::anneal(int iter_number){
 void SpinLattice::freeze()
 {
     // Setting temperature to 0 and run again the monte carlo procedure
-    temperature = 0;
+    temperature = 1e-10;
     anneal(10000000);
 }
 
