@@ -142,7 +142,7 @@ void SpinLattice::freeze()
 {
     // Setting temperature to 0 and run again the monte carlo procedure
     temperature = 1e-10;
-    anneal(10000000);
+    anneal(100000);
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

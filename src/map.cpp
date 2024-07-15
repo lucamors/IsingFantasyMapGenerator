@@ -80,13 +80,22 @@ Map::Map(SpinLattice* lattice)
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-Map::~Map(){}
+Map::~Map(){
+
+    for (size_t i = 0; i < N; i++)
+    {
+        delete[] heightmap[i];
+    }
+
+    delete[] heightmap;
+    
+}
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 int& Map::operator()(int i, int j) 
 {
-        return heightmap[i][j];
+    return heightmap[i][j];
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//

@@ -82,6 +82,7 @@ void Renderer::render(Map * map, std::string filename)
     
     int cell_size = 5;
     int N= map->get_map_dimension();
+
     SDL_Surface* surface = SDL_CreateRGBSurface(0, N * cell_size, N * cell_size, 32, 0, 0, 0, 0);
 
     if (!surface) {
@@ -107,8 +108,12 @@ void Renderer::render(Map * map, std::string filename)
     if (SDL_SaveBMP(surface, filename.c_str()) != 0) {
         std::cerr << "SDL_SaveBMP failed: " << SDL_GetError() << std::endl;
     }
-
-    SDL_FreeSurface(surface);
+    
+    // this gives a one-time memory leak (using valgrind)
+    // see: https://stackoverflow.com/questions/1997171/why-does-valgrind-say-basic-sdl-program-is-leaking-memory
+    SDL_FreeSurface(surface); 
+                              
+    surface = NULL;
 
     return ;
 }
