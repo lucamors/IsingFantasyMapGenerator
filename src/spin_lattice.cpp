@@ -9,7 +9,7 @@ SpinLattice::SpinLattice(int N)
 {
     lattice_size = N;
     boarder_size = ((int)(0.05*N));
-
+    if(boarder_size == 0) boarder_size = 1;
     // Create the lattice grid
     init_lattice();
 }
@@ -53,6 +53,8 @@ void SpinLattice::init_lattice()
     {
         lattice[i] = new int[lattice_size];
     }
+
+
 
     // Init PRNG engine
     std::random_device rd;
@@ -102,7 +104,7 @@ void SpinLattice::anneal(int iter_number){
         // take a spin flip
         lattice[x][y] *= -1;
 
-        float new_energy = evaluate_energy_from_previous(x,y,energy);        
+        float new_energy = evaluate_energy_from_previous(x,y,energy);
 
         // Metropolis-Hasting procedure
         if(new_energy < energy){
@@ -196,7 +198,6 @@ float SpinLattice::evaluate_energy()
         }
     }
     
-
     return current_energy;
 }
 
