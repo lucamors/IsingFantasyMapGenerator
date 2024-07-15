@@ -17,7 +17,6 @@ Map::Map(SpinLattice* lattice)
     // Init heightmap using the lattice dimension
     init_heightmap(N);
 
-
     // Apply edge detection to the lattice
     std::vector<std::vector<int>> edge_detected_grid = edge_detection_filter(lattice);
 
@@ -73,8 +72,6 @@ Map::Map(SpinLattice* lattice)
             
         } 
     }
-
-    
 
 }
 
