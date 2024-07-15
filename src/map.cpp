@@ -10,9 +10,9 @@
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-Map::Map(SpinLattice* lattice)
+Map::Map(const SpinLattice& lattice)
 {
-    N = lattice->get_size();
+    N = lattice.get_size();
 
     // Init heightmap using the lattice dimension
     init_heightmap(N);
@@ -57,7 +57,7 @@ Map::Map(SpinLattice* lattice)
 
             }
             
-            heightmap[i][j] =  (*lattice)(i,j) == 1 ? minimum_distance : -minimum_distance;
+            heightmap[i][j] =  lattice(i,j) == 1 ? minimum_distance : -minimum_distance;
 
             // Search for bounds
             if(heightmap[i][j] > maxval)
@@ -90,28 +90,28 @@ Map::~Map(){
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-int& Map::operator()(int i, int j) 
+int& Map::operator()(int i, int j) const
 {
     return heightmap[i][j];
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-float Map::get_min_height()
+float Map::get_min_height() const
 {
     return minval;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-int Map::get_map_dimension()
+int Map::get_map_dimension() const
 {
     return N;
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-float Map::get_max_height()
+float Map::get_max_height() const
 {
     return maxval;
 }

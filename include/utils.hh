@@ -7,16 +7,15 @@
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-inline std::vector<std::vector<int>> edge_detection_filter(SpinLattice* lattice)
+inline std::vector<std::vector<int>> edge_detection_filter(const SpinLattice& lattice)
 {
-    int N = lattice->get_size();
+    int N = lattice.get_size();
 
     // Define a custom ridge kernel
     std::vector<std::vector<int>> ridgeKernel = {{-1, -1, -1}, {-1, 8, -1}, {-1, -1, -1}};
 
     int kernelSize = ridgeKernel.size();
     int padding = kernelSize / 2; // Padding size for handling border pixels
-    
     std::vector<std::vector<int>> result(N, std::vector<int>(N, 0));
 
     for (int i = padding; i < N - padding; i++) {
@@ -25,14 +24,13 @@ inline std::vector<std::vector<int>> edge_detection_filter(SpinLattice* lattice)
 
             for (int k = -padding; k <= padding; k++) {
                 for (int l = -padding; l <= padding; l++) {
-                    sum += (*lattice)(i + k,j + l) * ridgeKernel[k + padding][l + padding];
+                    sum += lattice(i + k,j + l) * ridgeKernel[k + padding][l + padding];
                 }
             }
 
             result[i][j] = sum;
         }
     }
-
 
     return result;
 }

@@ -30,14 +30,14 @@ SpinLattice::~SpinLattice(){
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
 
-int& SpinLattice::operator()(int i, int j) 
+int& SpinLattice::operator()(int i, int j) const
 {
-        return lattice[i][j];
+    return lattice[i][j];
 }
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~//
 
-int SpinLattice::get_size()
+int SpinLattice::get_size() const
 {
     return lattice_size;
 }

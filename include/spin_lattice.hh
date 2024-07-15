@@ -8,9 +8,9 @@ class SpinLattice{
         SpinLattice(int N);
         ~SpinLattice();
 
-        int& operator()(int i, int j);
+        int& operator()(int i, int j) const;
         
-        int get_size();
+        int get_size() const;
         
 
         void anneal(int);

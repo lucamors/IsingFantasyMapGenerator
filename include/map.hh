@@ -19,14 +19,14 @@ class Map{
 
     public:
 
-        Map(SpinLattice*);
+        Map(const SpinLattice&);
         ~Map();
 
-        int& operator()(int i, int j);
+        int& operator()(int i, int j) const;
 
-        float get_min_height();
-        float get_max_height();
-        int get_map_dimension();
+        float get_min_height() const;
+        float get_max_height() const;
+        int get_map_dimension() const;
 
         void generate_river();
         void generate_tree();
